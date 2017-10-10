@@ -33,4 +33,29 @@ class FoodTrackerTests: XCTestCase {
         }
     }
     
+    func testValidMeals(){
+        let validNameMeal = Meal(name:"Pasta", rating:5, image:UIImage(named:"defaultPhoto")!)
+        
+        XCTAssertNotNil(validNameMeal)
+        
+        let validRatingMeal = Meal(name: "meat", rating:1, image:UIImage(named:"defaultPhoto")!)
+        
+        XCTAssertNotNil(validRatingMeal)
+    }
+    
+    func testNotValidMeals(){
+        let invalidRatingMeal = Meal(name: "Pizza", rating:-1, image:UIImage(named:"defaultPhoto")!)
+        
+        
+        XCTAssertNil(invalidRatingMeal)
+        
+        let invalidNameMeal = Meal(name: "", rating:2, image:UIImage(named:"defaultPhoto")!)
+        
+        XCTAssertNil(invalidNameMeal)
+        
+        
+    }
+    
+    
+    
 }
